@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *locationLogo;
 @property (weak, nonatomic) IBOutlet UILabel *locationStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
+@property (weak, nonatomic) IBOutlet UITableView *peopleTableView;
+
+@property (strong, nonatomic) NSArray *people;
 
 - (NSString *)getHoursString;
 

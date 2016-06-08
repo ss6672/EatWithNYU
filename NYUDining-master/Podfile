@@ -1,12 +1,16 @@
-pod 'Firebase', '>= 2.5.1'
+target "NYUDining" do
 
-platform :ios, '7.0'
-pod "AFNetworking", "~> 2.0"
+    pod 'Firebase', '>= 2.5.1'
 
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.1'
-pod 'GoogleMaps'
+    platform :ios, '7.0'
+    pod "AFNetworking", "~> 2.0"
 
-pod 'MBProgressHUD', '~> 0.9.1'
+    source 'https://github.com/CocoaPods/Specs.git'
+    platform :ios, '8.1'
+    pod 'GoogleMaps'
 
-pod 'ActionSheetPicker-3.0', '~> 2.0.3'
+    pod 'MBProgressHUD', '~> 0.9.1'
+
+    pod 'ActionSheetPicker-3.0', '~> 2.0.3'
+
+end
