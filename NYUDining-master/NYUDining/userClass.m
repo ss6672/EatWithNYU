@@ -10,9 +10,9 @@
 
 @implementation userClass
 
-@synthesize fbFirstName, fbLastName, likes, fbUniqueID, gcmID, oldAcceptedR ;
+@synthesize fbFirstName, fbLastName, likes, fbUniqueID, gcmID, oldAcceptedReq, pendingReq ;
 
--(id)initWithaID:(NSString *)fname fbLastName:(NSString *)lname likes: (NSString *)like fbUniqueID: (NSString *) fbUID gcmID: (NSString *) agcmID oldAcceptedR: (NSArray *) oar{
+-(id)initWithaID:(NSString *)fname fbLastName:(NSString *)lname likes: (NSString *)like fbUniqueID: (NSString *) fbUID gcmID: (NSString *) agcmID oldAcceptedReq: (NSArray *) oar pendingReq: (NSArray *) per{
     self = [super init];
     if(self){
         self.fbFirstName = fname;
@@ -20,9 +20,11 @@
         self.likes = like;
         self.fbUniqueID = fbUID;
         self.gcmID = agcmID;
-        self.oldAcceptedR = oar;
+        self.oldAcceptedReq = oar;
+        self.pendingReq = per;
     }
     return self;
 }
+
 
 @end

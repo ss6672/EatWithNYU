@@ -8,6 +8,7 @@
 
 #import "RFLocationDetailViewController.h"
 #import "RFHoursTableViewController.h"
+#import "ViewPersonViewController.h"
 
 @interface RFLocationDetailViewController ()
 
@@ -63,11 +64,58 @@
     
     return hoursString;
 }
-
+// add a no one has checked in :( for when there is no one checked in
+//pop up for click here to be the first to check in
 
 #pragma mark - Navigation
 
+- (IBAction)CheckIn:(id)sender {
+    
+    
+}
+
+-(NSInteger)tableView: (UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == _peopleTableView){
+        return [self.people count];
+    }
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    
+    if(tableView == _peopleTableView) {
+        
+        NSString *fc = [self.people objectAtIndex:indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@"];
+    }
+    
+    return cell;
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"ViewFriendSegue"]){
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        UITableView *tableView = self.peopleTableView;
+        
+        if(self.peopleTableView) {
+            
+            NSIndexPath *ip = [tableView indexPathForCell:cell];
+            
+            NSString *f1 = [self.people objectAtIndex:ip.row];
+            
+            ViewPersonViewController *vf = (ViewPersonViewController *)segue.destinationViewController;
+            
+            vf.info = f1;
+        }
+    }
     if ([segue.identifier isEqualToString:@"showMenu"]) {
         RFMenuBrowserViewController *dest = (RFMenuBrowserViewController *)[segue destinationViewController];
         dest.location = _location;

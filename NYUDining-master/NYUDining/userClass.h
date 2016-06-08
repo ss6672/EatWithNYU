@@ -20,8 +20,12 @@
 
 @property (strong, nonatomic) NSString *gcmID;
 
-@property (strong, nonatomic) NSArray *oldAcceptedR;
+@property (strong, nonatomic) NSArray *oldAcceptedReq;
 
--(id)initWithaID:(NSString *)fname fbLastName:(NSString *)lname likes: (NSString *)like fbUniqueID: (NSString *) fbUID gcmID: (NSString *) agcmID oldAcceptedR: (NSArray *) oar;
+@property (strong, nonatomic) NSArray *pendingReq;
+
+
+
+-(id)initWithaID:(NSString *)fname fbLastName:(NSString *)lname likes: (NSString *)like fbUniqueID: (NSString *) fbUID gcmID: (NSString *) agcmID oldAcceptedReq: (NSArray *) oar pendingReq: (NSArray *) per;
 
 @end

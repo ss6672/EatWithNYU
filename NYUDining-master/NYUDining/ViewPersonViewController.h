@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewPersonViewController : UIViewController
+@property (strong, nonatomic) NSString *info;
 
 @end
